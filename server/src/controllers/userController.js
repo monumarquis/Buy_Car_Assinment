@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 const SECRET_TOKEN = process.env.SECRET_TOKEN;
 const SECRET_REFRESH_TOKEN = process.env.SECRET_REFRESH_TOKEN;
 
-
 // user Register  Route Logic
 const userSignup = async (req, res) => {
   const { name, email, password } = req.body;
@@ -26,7 +25,6 @@ const userSignup = async (req, res) => {
     .status(201)
     .send({ user, message: "You have Signup Successfully" });
 };
-
 
 // user Login  Route Logic
 const userLogin = async (req, res) => {
@@ -50,7 +48,7 @@ const userLogin = async (req, res) => {
       //login
       const token = jwt.sign(
         {
-          _id: User.id,
+          _id: User._id,
           name: User.name,
           email: User.email,
           password: User.password,
@@ -60,11 +58,13 @@ const userLogin = async (req, res) => {
           expiresIn: "7 days",
         }
       );
-      return res.status(200).send({ message: "Login Successfull", token });
+      return res
+        .status(200)
+        .send({ message: "Login Successfull", token, id: User._id });
     } else {
       return res.status(401).send({ message: "Password is Incorrect" });
     }
-  } catch (err){
+  } catch (err) {
     console.log(err);
     return res.status(401).send({ message: "Invalid Credentials" });
   }
