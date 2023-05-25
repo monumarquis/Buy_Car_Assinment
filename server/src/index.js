@@ -5,6 +5,7 @@ const connect = require("./config/db");
 const app = express();
 const User = require("./routes/user");
 const Oem = require("./routes/oem_specs");
+const oldCars = require("./routes/oldCar");
 
 const PORT = process.env.PORT || 8001;
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true, limit: "500mb" }));
 
 app.use("/users", User);
 app.use("/cars", Oem);
+app.use("/oldCars", oldCars);
 
 app.get("/", (req, res) => {
   res.send("This is  Home Route");

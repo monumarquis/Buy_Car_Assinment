@@ -3,13 +3,15 @@ import { Routes, Route } from "react-router-dom";
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import PrivateRoutes from './PrivateRoutes';
-import { useSelector } from 'react-redux';
 import CarsSpec from '../pages/CarsSpec';
+import OldCars from '../pages/OldCars';
+import SellCar from '../pages/SellCar';
 const AllRoute = () => {
-    const { isAuth } = useSelector((state) => state.auth)
     return (
         <Routes>
             <Route path='/' element={<PrivateRoutes><CarsSpec /></PrivateRoutes>}></Route>
+            <Route path='/oldCars' element={<PrivateRoutes><OldCars /></PrivateRoutes>}></Route>
+            <Route path='/sellcar' element={<PrivateRoutes><SellCar /></PrivateRoutes>}></Route>
             <Route path='/login' element={<Login />}></Route>
             <Route path='/signup' element={<Signup />}></Route>
         </Routes>

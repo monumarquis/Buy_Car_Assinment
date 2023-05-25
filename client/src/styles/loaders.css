@@ -202,20 +202,21 @@
 .loader {
     display: flex;
     align-items: center;
+    height: 80vh;
 }
 
 .icon {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
     animation: spin 1s linear infinite;
-    stroke: rgba(107, 114, 128, 1);
+    stroke: #FF0072;
 }
 
 .loading-text {
-    font-size: 0.75rem;
+    font-size: 16px;
     line-height: 1rem;
     font-weight: 500;
-    color: rgba(107, 114, 128, 1);
+    color: rgb(47, 48, 49);
 }
 
 @keyframes spin {

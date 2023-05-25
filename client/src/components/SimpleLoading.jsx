@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../styles/loaders.css"
 const SimpleLoading = () => {
     return (
         <div aria-label="Loading..." role="status" class="loader">

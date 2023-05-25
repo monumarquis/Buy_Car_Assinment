@@ -18,7 +18,7 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import { MdAlternateEmail } from 'react-icons/md'
 import { TiLockClosed } from 'react-icons/ti'
 import car from "../images/car.jpg"
-import { Link, useNavigate, Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { LogIn } from '../redux/user/user.actions'
 const initState = {
@@ -27,7 +27,6 @@ const initState = {
 };
 
 const Login = () => {
-    const navigate = useNavigate()
     const dispatch = useDispatch()
     const toast = useToast()
     const { isAuth, loading, error, errorMessage } = useSelector((state) => state.auth)

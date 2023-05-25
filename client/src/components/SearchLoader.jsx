@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../styles/loaders.css"
 const SearchLoader = () => {
     return (
         <div id="wifi-loader">

@@ -15,7 +15,7 @@ export const userReducer = (
   switch (type) {
     case LOGIN_SUCCESS: {
       localStorage.setItem("token", payload.token)
-      localStorage.setItem("userId", payload.userId)
+      localStorage.setItem("userId", payload.id)
 
       return {
         ...state,
