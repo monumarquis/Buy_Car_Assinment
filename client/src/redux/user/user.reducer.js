@@ -21,7 +21,7 @@ export const userReducer = (
         ...state,
         isAuth: true,
         token: payload.token,
-        userId: payload.userId,
+        userId: payload.id,
         loading: false,
         error: false
       };

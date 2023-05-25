@@ -1,4 +1,5 @@
 import "./App.css";
+import "./styles/loaders.css";
 import AllRoute from "./routes/Route";
 
 function App() {
