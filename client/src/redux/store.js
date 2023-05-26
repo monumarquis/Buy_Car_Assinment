@@ -7,10 +7,12 @@ import {
 import thunk from "redux-thunk";
 import { userReducer } from "./user/user.reducer";
 import { oemCarsReducer } from "./oemCars/oemCars.reducer";
+import { oldarsReducer } from "./oldCars/oldCars.reducer";
 
 const rootReducer = combineReducers({
   auth: userReducer,
   oem_cars: oemCarsReducer,
+  old_cars:oldarsReducer
 });
 
 const createCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

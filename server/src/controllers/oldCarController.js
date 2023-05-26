@@ -41,7 +41,7 @@ const uploadCar = async (req, res) => {
       totalBuyers,
       registrationPlace,
       mileage,
-      price
+      price,
     } = req.body;
     if (!imageUrl || !userId)
       return res.status(404).send({ message: "Please Select Image" });
@@ -84,7 +84,11 @@ const uploadCar = async (req, res) => {
 };
 
 const getAlloldCars = async (req, res) => {
-  const { page = 1, limit = 9, color ,  } = req.query;
+  const { page = 1, limit = 9, color, mileage, price } = req.query;
+  console.log(mileage);
+  const aboveMileage = parseInt(mileage);
+  let mileageQuery = {};
+  mileageQuery.mileage = { $regex: `${aboveMileage}kms`, $options: "i" };
   try {
     const x = await oldCarModel.find();
     const allCars = await oldCarModel
@@ -100,4 +104,63 @@ const getAlloldCars = async (req, res) => {
   }
 };
 
-module.exports = { uploadCar, getAlloldCars };
+const deleteOldCar = async (req, res) => {
+  let { id } = req.params;
+  console.log(id);
+
+  try {
+    let doc = await oldCarModel.deleteOne({ _id: id });
+    return res
+      .status(201)
+      .send({ message: "Your Listed Cars Deleted Successfully" });
+  } catch (error) {
+    return res.status(401).send(error);
+  }
+};
+
+const UpdateOldCar = async (req, res) => {
+  let {
+    user,
+    img,
+    title,
+    odometerDistance,
+    totalAccident,
+    color,
+    totalBuyers,
+    registrationPlace,
+    mileage,
+    price,
+  } = req.body;
+  const { id } = req.params;
+  console.log(id);
+
+  try {
+    let doc = await oldCarModel.findOneAndUpdate(
+      { _id: id, user },
+      {
+        $set: {
+          img: img,
+          title: title,
+          odometerDistance: odometerDistance,
+          totalAccident: totalAccident,
+          color: color,
+          totalBuyers: totalBuyers,
+          registrationPlace: registrationPlace,
+          mileage: mileage,
+          price: price,
+        },
+      },
+      {
+        new: true,
+      }
+    );
+    // console.log(doc);
+    return res
+      .status(201)
+      .send({ message: "Your Informtion Updated Successfully" });
+  } catch (error) {
+    return res.status(401).send(error);
+  }
+};
+
+module.exports = { uploadCar, getAlloldCars, deleteOldCar, UpdateOldCar };

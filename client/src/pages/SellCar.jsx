@@ -116,12 +116,12 @@ const SellCar = () => {
                     </Flex>
                     <Flex flexDir="row" >
                         <Box w="50%" >
-                            <label>Price</label>
-                            <input name='price' onChange={handleChange} value={FormData.price} placeholder='Enter Price e.g: ₹5.3 lakhs*' type='text' />
+                            <label> Price (₹)</label>
+                            <input name='price' onChange={handleChange} value={FormData.price} placeholder='Enter Price e.g: 5.3 lakhs*' type='text' />
                         </Box>
                         <Box w="50%" pl="10px" >
                             <label>Mileage (in kilometers per litre)</label>
-                            <input name='mileage' onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30kms per litre' type='text' />
+                            <input name='mileage' onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
                         </Box>
                     </Flex>
                     <label>Place Of Registration</label>

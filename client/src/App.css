@@ -398,3 +398,97 @@
 .old__car__form .thm-btn{
   margin: 40px 0;
 }
+
+
+
+.old__car-grid{ font-family: 'Poppins', sans-serif; }
+.old__car-grid .old__car-image{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.old__car-grid .old__car-image a.image{display: block; }
+.old__car-grid .old__car-image img{
+    width: 100%;
+    height: auto;
+}
+.old__car-grid .old__car-links{
+    font-size: 0;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+.old__car-grid:hover .old__car-links{ opacity: 1; }
+.old__car-grid .old__car-links li{
+    width: 50%;
+    margin: 5px 0; 
+    display: inline-block;
+    transform: translateX(-50px);
+    transition: all 0.3s ease 0s;
+}
+.old__car-grid .old__car-links li:nth-child(even){
+    text-align: right;
+    transform: translateX(50px);
+}
+.old__car-grid:hover .old__car-links li{ transform: translateX(0); }
+.old__car-grid .old__car-links li a{
+    color: #fff;
+    background-color: #8b4513;
+    font-size: 13px;
+    text-align: center;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.4s ease;
+}
+.old__car-grid .old__car-links li a:hover{
+    color: #8b4513;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #8b4513,0 0 12px #8b4513;
+}
+.old__car-grid .old__car-content{
+    text-align: center;
+    padding: 15px 15px 5px;
+}
+.old__car-grid .title{
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+}
+.old__car-grid .title a{
+    color: #333;
+    transition: all 0.3s ease 0s;
+}
+.old__car-grid .title a:hover{ color: #8b4513; }
+.old__car-grid .price{
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    width: calc(100% - 94px);
+    display: inline-block;
+}
+.old__car-grid .rating{
+    color: #8b4513;
+    font-size: 12px;
+    width: 90px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+}
+@media screen and (max-width: 990px){
+    .old__car-grid{ margin-bottom: 30px; }
+}
