@@ -1,27 +1,36 @@
-import { Flex } from '@chakra-ui/react'
-import React from 'react'
+import { Flex, useDisclosure, useToast } from '@chakra-ui/react'
+import { RiDeleteBin7Fill } from 'react-icons/ri'
+import { FaRegEdit, FaHeart, FaOpencart } from 'react-icons/fa'
+import { useRef } from 'react'
+import DeleteAlert from '../pages/DeleteAlert'
+import { useNavigate } from 'react-router-dom'
 
-const SingleOldCar = () => {
+const SingleOldCar = ({ data }) => {
+    const navigate = useNavigate()
+    const { isOpen: isDelete, onOpen: onDeleteOpen, onClose: onDeleteClose } = useDisclosure()
+    const cancelRef = useRef()
     return (
         <div class="old__car-grid">
             <div class="old__car-image">
                 <a class="image">
-                    <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Tesla-Model-3/5100/1558500541732/front-left-side-47.jpg?tr=w-456" alt="img" />
+                    <img src={data.img} alt="img" />
                 </a>
                 <ul class="old__car-links">
-                    <li><div className='old__car__icons' ><i class="fa fa-search"></i></div></li>
-                    <li><div className='old__car__icons' ><i class="fa fa-shopping-cart"></i></div></li>
-                    <li><div className='old__car__icons' ><i class="fa fa-heart"></i></div></li>
-                    <li><div className='old__car__icons' ><i class="fa fa-random"></i></div></li>
+                    <li><div className='old__car__icons' ><FaHeart color="var(--primary-color)" /></div></li>
+                    <li onClick={() => navigate(`edit/${data._id}`)} ><div className='old__car__icons' ><FaRegEdit color="var(--primary-color)" /></div></li>
+                    <li><div className='old__car__icons' ><FaOpencart color="var(--primary-color)" /></div></li>
+                    <li onClick={onDeleteOpen} ><div className='old__car__icons' ><RiDeleteBin7Fill color="var(--primary-color)" /></div></li>
                 </ul>
             </div>
             <div class="old__car-content">
-                <h3 class="title">Women's Top</h3>
+                <h3 class="title">{data.title}</h3>
                 <Flex>
-                    <div class="price">$68.88</div>
+                    <div class="price"> ₹{data.price}*</div>
                 </Flex>
             </div>
-        </div>
+            {/* delete Confirm */}
+            <DeleteAlert onDeleteClose={onDeleteClose} id={data._id} onDeleteOpen={onDeleteOpen} isDelete={isDelete} cancelRef={cancelRef} />
+        </div >
     )
 }
 

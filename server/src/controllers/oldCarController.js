@@ -163,4 +163,20 @@ const UpdateOldCar = async (req, res) => {
   }
 };
 
-module.exports = { uploadCar, getAlloldCars, deleteOldCar, UpdateOldCar };
+
+const getSingleOldCar = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+
+  try {
+    let doc = await oldCarModel.findOne({ _id: id });
+    // console.log(doc);
+    return res
+      .status(201)
+      .send({ carData:doc });
+  } catch (error) {
+    return res.status(401).send(error);
+  }
+};
+
+module.exports = { uploadCar, getAlloldCars, deleteOldCar, UpdateOldCar, getSingleOldCar };
