@@ -11,23 +11,28 @@ import {
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { getAllOldCars } from '../redux/oldCars/oldCars.actions'
 
 const DeleteAlert = ({ onDeleteClose, isDelete, cancelRef, id }) => {
     const [loading, setLoading] = useState(false)
     const toast = useToast()
+    const dispatch = useDispatch()
     const DeleteCarHandle = async () => {
         setLoading(true)
         try {
 
-            let { message } = await axios.delete(`http://localhost:8001/oldCars/${id}`)
+            let { message } = await axios.delete(`https://car-dealer-server-production.up.railway.app/oldCars/${id}`)
             toast({
                 title: 'Item Deleted',
                 description: message,
                 status: 'success',
+                position: 'top',
                 duration: 9000,
                 isClosable: true,
             })
             setLoading(false)
+            dispatch(getAllOldCars(`https://car-dealer-server-production.up.railway.app/oldCars`))
         }
         catch (err) {
             toast({

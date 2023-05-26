@@ -11,7 +11,7 @@ const OldCars = () => {
   const [page, setPage] = useState(1)
   const handlePagination = (value) => setPage(value)
   useEffect(() => {
-    dispatch(getAllOldCars(`http://localhost:8001/oldCars?page=${page}`))
+    dispatch(getAllOldCars(`https://car-dealer-server-production.up.railway.app/oldCars?page=${page}`))
   }, [page])
   console.log(data);
   if (loading) {

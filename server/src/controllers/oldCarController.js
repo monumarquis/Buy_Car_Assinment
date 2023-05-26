@@ -121,7 +121,7 @@ const deleteOldCar = async (req, res) => {
 const UpdateOldCar = async (req, res) => {
   let {
     user,
-    img,
+    imageUrl,
     title,
     odometerDistance,
     totalAccident,
@@ -130,39 +130,70 @@ const UpdateOldCar = async (req, res) => {
     registrationPlace,
     mileage,
     price,
+    isFileUploaded,
   } = req.body;
   const { id } = req.params;
-  console.log(id);
+  console.log(isFileUploaded);
 
   try {
-    let doc = await oldCarModel.findOneAndUpdate(
-      { _id: id, user },
-      {
-        $set: {
-          img: img,
-          title: title,
-          odometerDistance: odometerDistance,
-          totalAccident: totalAccident,
-          color: color,
-          totalBuyers: totalBuyers,
-          registrationPlace: registrationPlace,
-          mileage: mileage,
-          price: price,
+    if (isFileUploaded) {
+      uploadImage(imageUrl)
+        .then(async (url) => {
+          let car = await oldCarModel.findOneAndUpdate(
+            { _id: id, user },
+            {
+              $set: {
+                img: url,
+                title: title,
+                odometerDistance: odometerDistance,
+                totalAccident: totalAccident,
+                color: color,
+                totalBuyers: totalBuyers,
+                registrationPlace: registrationPlace,
+                mileage: mileage,
+                price: price,
+              },
+            },
+            {
+              new: true,
+            }
+          );
+          return res.status(201).send({ message: "Car Added Succesfully" });
+        })
+        .catch((err) => {
+          console.log(err);
+          return res.status(500).send({ message: err.message });
+        });
+    } 
+    else {
+      let doc = await oldCarModel.findOneAndUpdate(
+        { _id: id, user },
+        {
+          $set: {
+            title: title,
+            odometerDistance: odometerDistance,
+            totalAccident: totalAccident,
+            color: color,
+            totalBuyers: totalBuyers,
+            registrationPlace: registrationPlace,
+            mileage: mileage,
+            price: price,
+          },
         },
-      },
-      {
-        new: true,
-      }
-    );
-    // console.log(doc);
-    return res
-      .status(201)
-      .send({ message: "Your Informtion Updated Successfully" });
+        {
+          new: true,
+        }
+      );
+      // console.log(doc);
+
+      return res
+        .status(201)
+        .send({ message: "Your Informtion Updated Successfully" });
+    }
   } catch (error) {
     return res.status(401).send(error);
   }
 };
-
 
 const getSingleOldCar = async (req, res) => {
   const { id } = req.params;
@@ -171,12 +202,16 @@ const getSingleOldCar = async (req, res) => {
   try {
     let doc = await oldCarModel.findOne({ _id: id });
     // console.log(doc);
-    return res
-      .status(201)
-      .send({ carData:doc });
+    return res.status(201).send({ carData: doc });
   } catch (error) {
     return res.status(401).send(error);
   }
 };
 
-module.exports = { uploadCar, getAlloldCars, deleteOldCar, UpdateOldCar, getSingleOldCar };
+module.exports = {
+  uploadCar,
+  getAlloldCars,
+  deleteOldCar,
+  UpdateOldCar,
+  getSingleOldCar,
+};

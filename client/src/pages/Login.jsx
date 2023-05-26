@@ -37,6 +37,7 @@ const Login = () => {
             description: "hurray ! logged in",
             status: 'success',
             duration: 2000,
+            position: 'top',
             isClosable: true,
         })
         return <Navigate to="/" />

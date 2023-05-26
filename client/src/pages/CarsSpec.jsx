@@ -28,24 +28,24 @@ const CarsSpec = () => {
     // console.log(value, "call api")
     setSearchCar(value)
     if (!value) {
-      dispatch(getAllOemCars(`http://localhost:8001/cars?page=${page}`))
+      dispatch(getAllOemCars(`https://car-dealer-server-production.up.railway.app/cars?page=${page}`))
       return
     }
     let query = value.split(" ")
     if (query.length === 1) {
-      dispatch(getAllOemCarsSearch(`http://localhost:8001/cars/search?manufacturer=${query[0]}&page=${page}`))
+      dispatch(getAllOemCarsSearch(`https://car-dealer-server-production.up.railway.app/cars/search?manufacturer=${query[0]}&page=${page}`))
     }
     else if (query.length === 2) {
-      dispatch(getAllOemCarsSearch(`http://localhost:8001/cars/search?manufacturer=${query[0]}&name=${query[1]}&page=${page}`))
+      dispatch(getAllOemCarsSearch(`https://car-dealer-server-production.up.railway.app/cars/search?manufacturer=${query[0]}&name=${query[1]}&page=${page}`))
     }
     else if (query.length === 3) {
-      dispatch(getAllOemCarsSearch(`http://localhost:8001/cars/search?manufacturer=${query[0]}&name=${query[1]}&year=${query[2]}&page=${page}`))
+      dispatch(getAllOemCarsSearch(`https://car-dealer-server-production.up.railway.app/cars/search?manufacturer=${query[0]}&name=${query[1]}&year=${query[2]}&page=${page}`))
     }
     console.log(searchCar);
   }
   const debounceOnChange = useCallback(debounce(onChange, 1000), []);
   useEffect(() => {
-    dispatch(getAllOemCars(`http://localhost:8001/cars?page=${page}`))
+    dispatch(getAllOemCars(`https://car-dealer-server-production.up.railway.app/cars?page=${page}`))
   }, [page])
   // console.log(loading)
   if (loading) {

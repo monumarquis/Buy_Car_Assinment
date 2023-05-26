@@ -41,13 +41,14 @@ const Signup = () => {
     e.preventDefault();
     setLoading(true)
     try {
-      let { data } = await axios.post("http://localhost:8001/users/register", formData)
+      let { data } = await axios.post("https://car-dealer-server-production.up.railway.app/users/register", formData)
       console.log(data)
       toast({
         title: 'Account created.',
         description: "We've created your account for you.",
         status: 'success',
         duration: 9000,
+        position: 'top',
         isClosable: true,
       })
       navigate("/login")

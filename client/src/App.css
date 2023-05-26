@@ -188,16 +188,19 @@
 
 .product-grid .product-content {
   text-align: left;
-  padding: 15px 0 0;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 .product-grid .category {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin: 0 0 6px;
-  display: block;
 }
 
 .product-grid .category a {
@@ -206,10 +209,11 @@
 }
 
 .product-grid .title {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   text-transform: capitalize;
   margin: 0 0 2px;
+  color: #000;
 }
 
 .product-grid .title a {
@@ -403,7 +407,9 @@
 
 
 .old__car-grid {
-  font-family: 'Poppins', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 20px;
+  border-radius: 20px;
 }
 
 .old__car-grid .old__car-image {
@@ -412,13 +418,16 @@
   z-index: 1;
 }
 
-.old__car-grid .old__car-image a.image {
+.old__car-grid .old__car-image .image {
   display: block;
+  height: 350px;
+  border-radius: 20px;
 }
 
 .old__car-grid .old__car-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .old__car-grid .old__car-links {
@@ -464,7 +473,7 @@
   font-size: 13px;
   text-align: center;
   line-height: 35px;
- padding: 10px;
+  padding: 10px;
   border-radius: 50%;
   display: inline-block;
   transition: all 0.4s ease;
@@ -472,9 +481,9 @@
 }
 
 .old__car-grid .old__car-links li .old__car__icons:hover {
-  color:  var(--primary-color);
+  color: var(--primary-color);
   background-color: #fff;
-  box-shadow: 0 0 0 3px  var(--primary-color), 0 0 12px  var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-color), 0 0 12px var(--primary-color);
 }
 
 .old__car-grid .old__car-content {
@@ -484,33 +493,55 @@
 
 .old__car-grid .title {
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: capitalize;
   margin: 0 0 10px;
 }
 
 .old__car-grid .title {
-  color: #333;
+  color: #000;
   transition: all 0.3s ease 0s;
 }
 
 .old__car-grid .title:hover {
-  color:  var(--primary-color);
+  color: var(--primary-color);
 }
 
 .old__car-grid .price {
-  color: #333;
-  font-size: 15px;
+  color: var(--primary-color);
+  font-size: 20px;
   font-weight: 600;
   text-align: left;
-  width: calc(100% - 94px);
   display: inline-block;
 }
 
+.detail__old{
+  color: #b73493;
+  font-weight: 600;
+  font-style: italic;
+}
 
 
 @media screen and (max-width: 990px) {
   .old__car-grid {
     margin-bottom: 30px;
   }
+}
+
+.color__av {
+  font-size: 15px;
+  color: #777;
+
+}
+
+.color__av:hover {
+  font-size: 15px;
+  color: var(--primary-color);
+}
+
+.old-color{
+  color: var(--primary-color);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
 }

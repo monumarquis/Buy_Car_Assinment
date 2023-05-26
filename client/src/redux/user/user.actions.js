@@ -7,7 +7,7 @@ export const LogIn = (creds) => async (dispatch) => {
   });
 
   try {
-    const { data } = await axios.post(`http://localhost:8001/users/login`, creds);
+    const { data } = await axios.post(`https://car-dealer-server-production.up.railway.app/users/login`, creds);
     console.log(data);
     return dispatch({
       type: LOGIN_SUCCESS,

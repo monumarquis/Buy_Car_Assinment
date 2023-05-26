@@ -21,7 +21,16 @@ const SellCar = () => {
     const { userId } = useSelector((state) => state.auth)
 
     const onDrop = useCallback((acceptedFiles) => {
+      
         acceptedFiles.forEach((file) => {
+            toast({
+                title: 'Image Selected',
+                description: file.path,
+                status: 'info',
+                position: 'top',
+                duration: 2000,
+                isClosable: true,
+            })
             const reader = new FileReader()
             reader.onabort = () => console.log('file reading was aborted')
             reader.onerror = () => console.log('file reading has failed')
@@ -49,7 +58,7 @@ const SellCar = () => {
         // console.log(formData);
         setLoading(true)
         try {
-            let { message } = await axios.post("http://localhost:8001/oldCars", { ...formData, imageUrl: previewSource, userId })
+            let { message } = await axios.post("https://car-dealer-server-production.up.railway.app/oldCars", { ...formData, imageUrl: previewSource, userId })
             console.log(message);
             toast({
                 title: 'Added Car.',
@@ -97,11 +106,11 @@ const SellCar = () => {
                     <Flex flexDir="row" >
                         <Box w="50%" >
                             <label>Kms on Odometer</label>
-                            <input name='odometerDistance' onChange={handleChange} value={FormData.odometerDistance} placeholder='Enter kms on Odometer' type='number' />
+                            <input name='odometerDistance' min='0' onChange={handleChange} value={FormData.odometerDistance} placeholder='Enter kms on Odometer' type='number' />
                         </Box>
                         <Box w="50%" pl="10px" >
                             <label>Number of Accidents</label>
-                            <input name='totalAccident' onChange={handleChange} value={FormData.totalAccident} placeholder='Enter Number of Accidents' type='number' />
+                            <input name='totalAccident' min="0" max="100" onChange={handleChange} value={FormData.totalAccident} placeholder='Enter Number of Accidents' type='number' />
                         </Box>
                     </Flex>
                     <Flex flexDir="row" >
@@ -111,7 +120,7 @@ const SellCar = () => {
                         </Box>
                         <Box w="50%" pl="10px" >
                             <label>Number of previous buyers</label>
-                            <input name='totalBuyers' onChange={handleChange} value={FormData.totalBuyers} placeholder='Enter Number of Previous Buyers' type='number' />
+                            <input name='totalBuyers' min="0" max="100" onChange={handleChange} value={FormData.totalBuyers} placeholder='Enter Number of Previous Buyers' type='number' />
                         </Box>
                     </Flex>
                     <Flex flexDir="row" >
@@ -121,12 +130,12 @@ const SellCar = () => {
                         </Box>
                         <Box w="50%" pl="10px" >
                             <label>Mileage (in kilometers per litre)</label>
-                            <input name='mileage' onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
+                            <input name='mileage' min="0"  onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
                         </Box>
                     </Flex>
                     <label>Place Of Registration</label>
                     <textarea name='registrationPlace' onChange={handleChange} value={FormData.registrationPlace} placeholder='Enter Registration Place' type='text' />
-                    <Button type='submit' className='thm-btn' isLoading={loading} >Sell Car</Button>
+                    <Button type='submit' className='thm-btn' isLoading={loading} loadingText="Checking..."  >Sell Car</Button>
                 </form>
             </Flex>
         </section>
