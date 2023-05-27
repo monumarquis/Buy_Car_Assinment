@@ -71,7 +71,7 @@ const CarsSpec = () => {
           bg="var(--primary-light)"
         />
       </Flex>
-      <SimpleGrid columns={3} spacing={10} w="90%" m="auto" pt="60px" >
+      <SimpleGrid columns={[1,1,2,2,3]} spacing={10} w="90%" m="auto" pt="60px" >
         {data && data.length > 0 && data.map((el) => <SingleOemCar data={el} key={el._id} />)}
       </SimpleGrid>
       {data && data.length > 0 && <Pagination page={page} totalPages={totalPages} handlePagination={handlePagination} />}

@@ -84,15 +84,16 @@ const uploadCar = async (req, res) => {
 };
 
 const getAlloldCars = async (req, res) => {
-  const { page = 1, limit = 9, color, mileage, price } = req.query;
-  console.log(mileage);
-  const aboveMileage = parseInt(mileage);
-  let mileageQuery = {};
-  mileageQuery.mileage = { $regex: `${aboveMileage}kms`, $options: "i" };
+  const { page = 1, limit = 9, color } = req.query;
+  console.log(page, limit, color);
+  let query = {};
+  if (color) {
+    query = { color: { $regex: color, $options: "i" } };
+  }
   try {
     const x = await oldCarModel.find();
     const allCars = await oldCarModel
-      .find()
+      .find(query)
       .skip((page - 1) * limit)
       .limit(limit);
     return res
@@ -164,8 +165,7 @@ const UpdateOldCar = async (req, res) => {
           console.log(err);
           return res.status(500).send({ message: err.message });
         });
-    } 
-    else {
+    } else {
       let doc = await oldCarModel.findOneAndUpdate(
         { _id: id, user },
         {

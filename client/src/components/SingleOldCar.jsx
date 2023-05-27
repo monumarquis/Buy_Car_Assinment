@@ -1,6 +1,6 @@
 import { Flex, Text, useDisclosure } from '@chakra-ui/react'
 import { RiDeleteBin7Fill } from 'react-icons/ri'
-import { FaRegEdit, FaHeart, FaOpencart } from 'react-icons/fa'
+import { FaRegEdit, FaHeart, FaCartPlus } from 'react-icons/fa'
 import { useRef } from 'react'
 import DeleteAlert from '../pages/DeleteAlert'
 import { useNavigate } from 'react-router-dom'
@@ -14,13 +14,13 @@ const SingleOldCar = ({ data }) => {
     return (
         <div class="old__car-grid">
             <div class="old__car-image">
-                <a class="image">
+                <a href='#' class="image">
                     <img src={data.img} alt="img" />
                 </a>
                 <ul class="old__car-links">
                     <li><div className='old__car__icons' ><FaHeart color="var(--primary-color)" /></div></li>
                     {userId === data.user && <li onClick={() => navigate(`edit/${data._id}`)} ><div className='old__car__icons' ><FaRegEdit color="var(--primary-color)" /></div></li>}
-                    <li><div className='old__car__icons' ><FaOpencart color="var(--primary-color)" /></div></li>
+                    <li><div className='old__car__icons' ><FaCartPlus color="var(--primary-color)" /></div></li>
                     {userId === data.user && <li onClick={onDeleteOpen} ><div className='old__car__icons' ><RiDeleteBin7Fill color="var(--primary-color)" /></div></li>}
                 </ul>
             </div>

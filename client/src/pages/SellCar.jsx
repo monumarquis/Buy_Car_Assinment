@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 const initState = {
     title: "",
     odometerDistance: "",
@@ -15,13 +16,14 @@ const initState = {
 };
 const SellCar = () => {
     const toast = useToast()
+    const navigate = useNavigate()
     const [formData, setFormData] = useState(initState);
     const [loading, setLoading] = useState(false)
     const [previewSource, setpreviewSource] = useState("")
     const { userId } = useSelector((state) => state.auth)
 
     const onDrop = useCallback((acceptedFiles) => {
-      
+
         acceptedFiles.forEach((file) => {
             toast({
                 title: 'Image Selected',
@@ -61,19 +63,20 @@ const SellCar = () => {
             let { message } = await axios.post("https://car-dealer-server-production.up.railway.app/oldCars", { ...formData, imageUrl: previewSource, userId })
             console.log(message);
             toast({
-                title: 'Added Car.',
+                title: 'Added Car Successfully',
                 description: "We've Added your car in Market Place Inventory",
                 status: 'success',
                 duration: 9000,
                 isClosable: true,
             })
             setLoading(false)
+            navigate("/oldCars")
         } catch ({ response: { data: { message } } }) {
             setLoading(false)
             console.log(message);
             toast({
-                title: 'All the Fields Mandatory',
-                description: message,
+                title: message,
+                description: "'All the Fields Mandatory'",
                 status: 'error',
                 duration: 9000,
                 isClosable: true,
@@ -130,7 +133,7 @@ const SellCar = () => {
                         </Box>
                         <Box w="50%" pl="10px" >
                             <label>Mileage (in kilometers per litre)</label>
-                            <input name='mileage' min="0"  onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
+                            <input name='mileage' min="0" onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
                         </Box>
                     </Flex>
                     <label>Place Of Registration</label>

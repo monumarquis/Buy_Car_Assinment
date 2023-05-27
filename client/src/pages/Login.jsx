@@ -34,7 +34,8 @@ const Login = () => {
     const [show, setShow] = useState(false);
     if (isAuth) {
         toast({
-            description: "hurray ! logged in",
+            title:"Log in Successfull",
+            description: "Welcome to Best Car Selling Market",
             status: 'success',
             duration: 2000,
             position: 'top',

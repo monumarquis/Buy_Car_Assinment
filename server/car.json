@@ -1,0 +1,512 @@
+[
+  {
+    "manufacturer": "Honda",
+    "name": "City",
+    "year": 2015,
+    "list_price": "11.49 - 15.97 Lakh",
+    "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Honda/City/9710/1677914238296/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Alabaster Silver Metallic",
+      "Modern Steel Metallic",
+      "Golden Brown Metallic",
+      "Taffeta White",
+      "Carnelian Red Pearl"
+    ],
+    "mileage": "28 city / 40 highway mpg",
+    "power": 118,
+    "max_speed": 120
+  },
+  {
+    "manufacturer": "Honda",
+    "name": "Civic",
+    "year": 2019,
+    "list_price": "15 - 22.35 Lakh",
+    "available_colors": [
+      "Crystal Black Pearl",
+      "Lunar Silver Metallic",
+      "Tonic Yellow Pearl",
+      "Platinum White Pearl",
+      "Aegean Blue Metallic"
+    ],
+    "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Honda/Civic/7740/1585801296746/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "mileage": "30 city / 38 highway mpg",
+    "power": 158,
+    "max_speed": 130
+  },
+  {
+    "manufacturer": "Honda",
+    "name": "Accord",
+    "year": 2019,
+    "list_price": "19.90 Lakh",
+    "image": "https://images10.gaadi.com/usedcar_image/original/usedcar_whatsappimage2023_04_25at115053_3__2758698_1682488839.jpeg?imwidth=640",
+    "available_colors": [
+      "Radiant Red Metallic",
+      "Sonic Gray Pearl",
+      "Obsidian Blue Pearl",
+      "Lunar Silver Metallic",
+      "Modern Steel Metallic"
+    ],
+    "mileage": "29 city / 35 highway mpg",
+    "power": 192,
+    "max_speed": 135
+  },
+  {
+    "manufacturer": "Honda",
+    "name": "CR-V",
+    "year": 2021,
+    "list_price": "21.10 - 32.77 Lakh",
+    "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Honda/CR-V/7739/1585800250804/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Platinum White Pearl",
+      "Crystal Black Pearl",
+      "Radiant Red Metallic",
+      "Sonic Gray Pearl",
+      "Lunar Silver Metallic"
+    ],
+    "mileage": "28 city / 34 highway mpg",
+    "power": 190,
+    "max_speed": 127
+  },
+  {
+    "manufacturer": "Honda",
+    "name": "WR-V",
+    "year": 2023,
+    "list_price": "8 Lakh",
+    "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Honda/WR-V-2023/9420/1667390142668/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Obsidian Blue Pearl",
+      "Steel Sapphire Metallic",
+      "Black Forest Pearl",
+      "Modern Steel Metallic",
+      "Lunar Silver Metallic"
+    ],
+    "mileage": "19 city / 27 highway mpg",
+    "power": 280,
+    "max_speed": 124
+  },
+  {
+    "manufacturer": "Tesla",
+    "name": "Model S",
+    "year": 2023,
+    "list_price": "1.50 Cr",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Model-S/5252/1611840999494/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "available_colors": [
+      "Solid Black",
+      "Midnight Silver Metallic",
+      "Deep Blue Metallic",
+      "Pearl White Multi-Coat",
+      "Red Multi-Coat"
+    ],
+    "mileage": "405 miles",
+    "power": 670,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "Tesla",
+    "name": "Model 3",
+    "year": 2022,
+    "list_price":"60 Lakh" ,
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Tesla-Model-3/5100/1558500541732/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Solid Black",
+      "Midnight Silver Metallic",
+      "Deep Blue Metallic",
+      "Pearl White Multi-Coat",
+      "Red Multi-Coat"
+    ],
+    "mileage": "315 miles",
+    "power": 283,
+    "max_speed": 140
+  },
+  {
+    "manufacturer": "Tesla",
+    "name": "Model X",
+    "year": 2021,
+    "list_price": "2 Cr",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Model-X/5253/1611841733029/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "available_colors": [
+      "Solid Black",
+      "Midnight Silver Metallic",
+      "Deep Blue Metallic",
+      "Pearl White Multi-Coat",
+      "Red Multi-Coat"
+    ],
+    "mileage": "360 miles",
+    "power": 670,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "Tesla",
+    "name": "Model Y",
+    "year": 2023,
+    "list_price": "70 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Tesla-Model-Y/6396/1552894185017/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "available_colors": [
+      "Solid Black",
+      "Midnight Silver Metallic",
+      "Deep Blue Metallic",
+      "Pearl White Multi-Coat",
+      "Red Multi-Coat"
+    ],
+    "mileage": "303 miles",
+    "power": 283,
+    "max_speed": 135
+  },
+  {
+    "manufacturer": "Tesla",
+    "name": "Cybertruck",
+    "year": 2023,
+    "list_price": "50.70 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Cybertruck/7236/1574859399554/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Matte Black",
+      "Matte Gray",
+      "Matte Silver",
+      "Matte White"
+    ],
+    "mileage": "250+ miles",
+    "power": 800,
+    "max_speed": 130
+  },
+
+  {
+    "manufacturer": "BMW",
+    "name": "3 Series",
+    "year": 2023,
+    "list_price": "69.20 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/3-Series-2022/9110/1670666288910/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Alpine White",
+      "Jet Black",
+      "Portimao Blue Metallic",
+      "Sunset Orange Metallic",
+      "Black Sapphire Metallic"
+    ],
+    "mileage": "26 city / 36 highway mpg",
+    "power": 255,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "BMW",
+    "name": "5 Series",
+    "year": 2022,
+    "list_price": "65.40 - 74.50 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/5-Series/7805/1624528705624/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Alpine White",
+      "Jet Black",
+      "Bluestone Metallic",
+      "Cashmere Silver Metallic",
+      "Phytonic Blue Metallic"
+    ],
+    "mileage": "25 city / 33 highway mpg",
+    "power": 248,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "BMW",
+    "name": "7 Series",
+    "year": 2023,
+    "list_price": "1.70 Cr",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/7-Series/8971/1677911792286/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Alpine White",
+      "Jet Black",
+      "Mineral White Metallic",
+      "Arctic Gray Metallic",
+      "Cashmere Silver Metallic"
+    ],
+    "mileage": "17 city / 24 highway mpg",
+    "power": 335,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "BMW",
+    "name": "X3",
+    "year": 2022,
+    "list_price": "67.50 - 86.50 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/X3/9776/1680242353464/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Alpine White",
+      "Jet Black",
+      "Phytonic Blue Metallic",
+      "Glacier Silver Metallic",
+      "Dark Graphite Metallic"
+    ],
+    "mileage": "25 city / 29 highway mpg",
+    "power": 248,
+    "max_speed": 130
+  },
+  {
+    "manufacturer": "BMW",
+    "name": "X5",
+    "year": 2023,
+    "list_price": "98.50 - 99.90 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/360x240/BMW/BMW-X5/1558001906948/047.jpg",
+    "available_colors": [
+      "Alpine White",
+      "Jet Black",
+      "Mineral White Metallic",
+      "Arctic Gray Metallic",
+      "Phytonic Blue Metallic"
+    ],
+    "mileage": "19 city / 26 highway mpg",
+    "power": 335,
+    "max_speed": 150
+  },
+  {
+    "manufacturer": "Audi",
+    "name": "A3",
+    "year": 2022,
+    "list_price": "35 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A3-2021/7785/1587461646847/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Brilliant Black",
+      "Ibis White",
+      "Nano Gray Metallic",
+      "Cosmos Blue Metallic",
+      "Glacier White Metallic"
+    ],
+    "mileage": "23 city / 34 highway mpg",
+    "power": 184,
+    "max_speed": 130
+  },
+  {
+    "manufacturer": "Audi",
+    "name": "A4",
+    "year": 2023,
+    "list_price": "43.85 - 51.85 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A4/9321/1670914111785/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Brilliant Black",
+      "Ibis White",
+      "Manhattan Gray Metallic",
+      "Navarra Blue Metallic",
+      "Tango Red Metallic"
+    ],
+    "mileage": "24 city / 34 highway mpg",
+    "power": 201,
+    "max_speed": 130
+  },
+  {
+    "manufacturer": "Audi",
+    "name": "Q5",
+    "year": 2022,
+    "list_price": "61.51 - 67.31 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/Q5/7890/1637668688255/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Brilliant Black",
+      "Ibis White",
+      "Florett Silver Metallic",
+      "Mythos Black Metallic",
+      "Navarra Blue Metallic"
+    ],
+    "mileage": "22 city / 28 highway mpg",
+    "power": 261,
+    "max_speed": 135
+  },
+  {
+    "manufacturer": "Audi",
+    "name": "Q7",
+    "year": 2023,
+    "list_price": "84.70 - 92.30 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/Q7/7002/1667718548867/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Brilliant Black",
+      "Ibis White",
+      "Orca Black Metallic",
+      "Galaxy Blue Metallic",
+      "Carrara White"
+    ],
+    "mileage": "18 city / 23 highway mpg",
+    "power": 335,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "Audi",
+    "name": "e-tron",
+    "year": 2023,
+    "list_price": "1.02 - 1.26 Cr",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/e-tron/6591/1677914324939/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Glacier White Metallic",
+      "Mythos Black Metallic",
+      "Florett Silver Metallic",
+      "Catalunya Red Metallic",
+      "Antigua Blue Metallic"
+    ],
+    "mileage": "218 miles",
+    "power": 355,
+    "max_speed": 124
+  },
+  {
+    "manufacturer": "Maruti",
+    "name": "Swift",
+    "year": 2022,
+    "list_price": "6 - 9.03 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/7820/1675862859794/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Silky Silver",
+      "Solid Fire Red",
+      "Pearl Metallic Midnight Blue",
+      "Pearl Metallic Arctic White",
+      "Pearl Metallic Midnight Blue"
+    ],
+    "mileage": "23 city / 32 highway mpg",
+    "power": 82,
+    "max_speed": 110
+  },
+  {
+    "manufacturer": "Maruti",
+    "name": "Dzire",
+    "year": 2023,
+    "list_price": "6.52 - 9.39 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift-Dzire/7664/1675859508504/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Silky Silver",
+      "Solid Fire Red",
+      "Pearl Metallic Oxford Blue",
+      "Pearl Arctic White",
+      "Metallic Magma Grey"
+    ],
+    "mileage": "24 city / 32 highway mpg",
+    "power": 89,
+    "max_speed": 105
+  },
+  {
+    "manufacturer": "Maruti",
+    "name": "Baleno",
+    "year": 2022,
+    "list_price": "6.61 - 9.88 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Baleno/8674/1675858584706/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Nexa Blue",
+      "Pearl Arctic White",
+      "Premium Silver",
+      "Metallic Magma Grey",
+      "Phoenix Red"
+    ],
+    "mileage": "23 city / 31 highway mpg",
+    "power": 82,
+    "max_speed": 110
+  },
+  {
+    "manufacturer": "Maruti",
+    "name": "Vitara Brezza",
+    "year": 2023,
+    "list_price": "7.84 - 11.49 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Vitara-Brezza/7295/1638268460167/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Granite Grey",
+      "Pearl Arctic White",
+      "Premium Silver",
+      "Fiery Yellow",
+      "Torque Blue"
+    ],
+    "mileage": "24 city / 32 highway mpg",
+    "power": 103,
+    "max_speed": 115
+  },
+  {
+    "manufacturer": "Maruti",
+    "name": "Ertiga",
+    "year": 2023,
+    "list_price": "8.64 - 13.08 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Ertiga/9933/1682687495681/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Pearl Metallic Auburn Red",
+      "Metallic Magma Grey",
+      "Pearl Arctic White",
+      "Silky Silver",
+      "Oxford Blue"
+    ],
+    "mileage": "19 city / 24 highway mpg",
+    "power": 103,
+    "max_speed": 115
+  },
+  {
+    "manufacturer": "Ford",
+    "name": "Mustang",
+    "year": 2023,
+    "list_price": "80 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Ford/Mustang-2024/7939/1663750110692/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Shadow Black",
+      "Race Red",
+      "Oxford White",
+      "Iconic Silver",
+      "Velocity Blue"
+    ],
+    "mileage": "16 city / 25 highway mpg",
+    "power": 310,
+    "max_speed": 155
+  },
+  {
+    "manufacturer": "Ford",
+    "name": "Fiesta",
+    "year": 2022,
+    "list_price": "7.42 - 10.24 Lakh",
+    "image":"https://stimg.cardekho.com/car-images/carexteriorimages/large/Ford/Ford-Fiesta/side-view-(left)-090.jpg?tr=w-456",
+    "available_colors": [
+      "Shadow Black",
+      "Oxford White",
+      "Magnetic Metallic",
+      "Blue Metallic",
+      "Hot Pepper Red Metallic"
+    ],
+    "mileage": "27 city / 35 highway mpg",
+    "power": 120,
+    "max_speed": 120
+  },
+  {
+    "manufacturer": "Ford",
+    "name": "Focus",
+    "year": 2023,
+    "list_price": "9 Lakh",
+    "image":"https://stimg.cardekho.com/car-images/carexteriorimages/large/Ford/Ford-Focus/front-left-side-047.jpg?tr=w-456",
+    "available_colors": [
+      "Shadow Black",
+      "Oxford White",
+      "Blue Metallic",
+      "Lightning Blue Metallic",
+      "Ruby Red Metallic Tinted Clearcoat"
+    ],
+    "mileage": "26 city / 36 highway mpg",
+    "power": 160,
+    "max_speed": 130
+  },
+  {
+    "manufacturer": "Ford",
+    "name": "EcoSport",
+    "year": 2022,
+    "list_price": "8.19 - 11.69 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Ford/EcoSport/7323/1609839628163/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Oxford White",
+      "Agate Black",
+      "Dark Persian Green",
+      "Rapid Red Metallic Tinted Clearcoat",
+      "Star White Metallic Tri-Coat"
+    ],
+    "mileage": "27 city / 33 highway mpg",
+    "power": 181,
+    "max_speed": 130
+  },
+  {
+    "manufacturer": "Ford",
+    "name": "Falcon",
+    "year": 2023,
+    "list_price": "2 Lakh",
+    "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Ford/Ford-Falcon/1887/1560932428906/front-left-side-47.jpg?tr=w-456",
+    "available_colors": [
+      "Oxford White",
+      "Agate Black",
+      "Carbonized Gray",
+      "Iconic Silver",
+      "Rapid Red Metallic Tinted Clearcoat"
+    ],
+    "mileage": "21 city / 28 highway mpg",
+    "power": 300,
+    "max_speed": 143
+  }
+]
