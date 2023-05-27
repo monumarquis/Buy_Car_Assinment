@@ -399,7 +399,9 @@
   margin: 20px 0;
   padding-left: 10px;
 }
-
+.selected__file span{
+  color: var(--primary-color);
+}
 .old__car__form .thm-btn {
   margin: 40px 0;
 }
@@ -526,8 +528,25 @@
   .old__car-grid {
     margin-bottom: 30px;
   }
+  .drag-image button {
+    width: 60%;
+  }
+  .drag-image p {
+   font-size: 16px;
+  }
+  .nav .thm-btn{
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 2px;
+  
 }
-
+}
 .color__av {
   font-size: 15px;
   color: #777;

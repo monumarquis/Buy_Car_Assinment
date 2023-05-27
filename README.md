@@ -47,7 +47,7 @@
 
 
 
-It’s Individual AssignMent where I've used MERN stack to make the Car-ex web applicationto help Car-Dealer to sell car by listing on this site along with frontend & backend.
+It’s Individual AssignMent where I've used MERN stack to make the Car-ex web application to help Car-Dealer to sell car by listing on this site along with frontend & backend integeration.
 
 
 <br />

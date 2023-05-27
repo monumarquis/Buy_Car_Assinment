@@ -1,6 +1,6 @@
-import { Box, Button, Flex, Heading, Text, useToast } from '@chakra-ui/react'
+import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Box, Button, Flex, Heading, Text, useDisclosure, useToast } from '@chakra-ui/react'
 import axios from 'axios'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { useNavigate, useParams } from 'react-router-dom'
 import SimpleLoading from '../components/SimpleLoading'
@@ -13,18 +13,20 @@ const EditCar = () => {
     const initState = {
         title: data.title,
         odometerDistance: data.odometerDistance,
-        totalAccident:  data.totalAccident,
-        color:  data.color,
-        totalBuyers:  data.totalBuyers,
-        registrationPlace:  data.registrationPlace,
-        price:  data.price,
-        mileage:  data.mileage,
+        totalAccident: data.totalAccident,
+        color: data.color,
+        totalBuyers: data.totalBuyers,
+        registrationPlace: data.registrationPlace,
+        price: data.price,
+        mileage: data.mileage,
     };
     const toast = useToast()
     const [formData, setFormData] = useState(initState);
     const [isFileUploaded, setIsFileUploaded] = useState(false);
     const [updateLoading, setupdateLoading] = useState(false)
     const [previewSource, setpreviewSource] = useState("")
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const cancelRef = useRef()
     // const { userId } = useSelector((state) => state.auth)
     const onDrop = useCallback((acceptedFiles) => {
         setIsFileUploaded(true)
@@ -51,7 +53,7 @@ const EditCar = () => {
 
     }, [])
     const { getRootProps, getInputProps, open, isDragActive, acceptedFiles } = useDropzone({ onDrop, noClick: true })
-    const files = acceptedFiles.map(file => <div className='selected__file' key={file.path}>{file.path}</div>);
+    const files = acceptedFiles.map(file => <div className='selected__file' key={file.path}>Image Select Path - <span>{file.path}</span></div>);
     const getCarHandle = async () => {
         setLoading(true)
         try {
@@ -82,8 +84,8 @@ const EditCar = () => {
             let { message } = await axios.patch(`https://car-dealer-server-production.up.railway.app/oldCars/${id}`, { ...formData, isFileUploaded, imageUrl: previewSource, user: data.user })
             console.log(message);
             toast({
-                title: 'Added Car.',
-                description: "We've Added your car in Market Place Inventory",
+                title: 'Updated Car Info Successfully',
+                description: "Check Details Here",
                 status: 'success',
                 duration: 9000,
                 isClosable: true,
@@ -94,7 +96,7 @@ const EditCar = () => {
             setupdateLoading(false)
             console.log(message);
             toast({
-                title: 'All the Fields Mandatory',
+                title: 'Try Again',
                 description: message,
                 status: 'error',
                 duration: 9000,
@@ -111,16 +113,17 @@ const EditCar = () => {
             <SimpleLoading />
         </Flex>
     }
-    console.log(data,initState);
+    console.log(data, initState);
     return (
         <section>
             <Flex w="70%" m="auto" className='old__car__form' py="40px" flexDir="column" >
-                <Heading textAlign="center" fontSize="25px">Edit Car Information</Heading>
+                <Heading textAlign="center" fontSize={["15px","15px","20px","25px","25px"]} >Edit Car Information</Heading>
                 <Text textAlign="center" fontSize="15px" mb="20px" > Update details and specifications for your car</Text>
                 <form onSubmit={handelForm} >
                     <label>Title</label>
                     <input name='title' onChange={handleChange} value={FormData.title} placeholder='Enter Title' type='text' />
                     <label>Change Image Here </label>
+                    {isFileUploaded ? files : <a  href={data['img'] && !loading ? data.img : "#"} target="_blank" ><div className='selected__file'>Click to See Your Current Image</div></a>}
                     <div {...getRootProps()} className='drag-image' onClick={open} >
                         <input {...getInputProps()} />
                         {isDragActive ? (
@@ -133,40 +136,40 @@ const EditCar = () => {
                             Browse Image
                         </button>
                     </div>
-                    {isFileUploaded ? files : <a href={data['img'] && !loading ? data.img : "#"} target="_blank" ><div className='selected__file'>Click to See Your Current Image</div></a>}
-                    <Flex flexDir="row" >
-                        <Box w="50%" >
+                  
+                    <Flex flexDir={["column","column","column","row","row"]} >
+                        <Box w={["100%" ,"100%" ,"100%" ,"50%" ,"50%" ]} >
                             <label>Kms on Odometer</label>
                             <input name='odometerDistance' min="0" onChange={handleChange} value={FormData.odometerDistance} placeholder='Enter kms on Odometer' type='number' />
                         </Box>
-                        <Box w="50%" pl="10px" >
+                        <Box w={["100%" ,"100%" ,"100%" ,"50%" ,"50%" ]} pl={["0" ,"0" ,"0" ,"10px" ,"10px" ]} >
                             <label>Number of Accidents</label>
-                            <input name='totalAccident' min="0" max="100" onChange={handleChange} value={ FormData.totalAccident} placeholder='Enter Number of Accidents' type='number' />
+                            <input name='totalAccident' min="0" max="100" onChange={handleChange} value={FormData.totalAccident} placeholder='Enter Number of Accidents' type='number' />
                         </Box>
                     </Flex>
-                    <Flex flexDir="row" >
-                        <Box w="50%" >
+                    <Flex flexDir={["column","column","column","row","row"]} >
+                        <Box w={["100%" ,"100%" ,"100%" ,"50%" ,"50%" ]} >
                             <label>Original Paint</label>
-                            <input name='color' onChange={handleChange} value={ FormData.color} placeholder='Enter Original Paint' type='text' />
+                            <input name='color' onChange={handleChange} value={FormData.color} placeholder='Enter Original Paint' type='text' />
                         </Box>
-                        <Box w="50%" pl="10px" >
+                        <Box w={["100%" ,"100%" ,"100%" ,"50%" ,"50%" ]} pl={["0" ,"0" ,"0" ,"10px" ,"10px" ]} >
                             <label>Number of previous buyers</label>
                             <input name='totalBuyers' min="0" max="100" onChange={handleChange} value={FormData.totalBuyers} placeholder='Enter Number of Previous Buyers' type='number' />
                         </Box>
                     </Flex>
-                    <Flex flexDir="row" >
-                        <Box w="50%" >
+                    <Flex flexDir={["column","column","column","row","row"]} >
+                        <Box w={["100%" ,"100%" ,"100%" ,"50%" ,"50%" ]} >
                             <label> Price (₹)</label>
-                            <input name='price' onChange={handleChange} value={ FormData.price} placeholder='Enter Price e.g: 5.3 lakhs*' type='text' />
+                            <input name='price' onChange={handleChange} value={FormData.price} placeholder='Enter Price e.g: 5.3 lakhs*' type='text' />
                         </Box>
-                        <Box w="50%" pl="10px" >
+                        <Box w={["100%" ,"100%" ,"100%" ,"50%" ,"50%" ]} pl={["0" ,"0" ,"0" ,"10px" ,"10px" ]} >
                             <label>Mileage (in kilometers per litre)</label>
-                            <input name='mileage' min="0"  onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
+                            <input name='mileage' min="0" onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
                         </Box>
                     </Flex>
                     <label>Place Of Registration</label>
                     <textarea name='registrationPlace' onChange={handleChange} value={FormData.registrationPlace} placeholder='Enter Registration Place' type='text' />
-                    <Button type='submit' className='thm-btn' isLoading={updateLoading} loadingText="Uploading..." >Update Info</Button>
+                    <Button type='submit' ml={3} className='thm-btn' isLoading={updateLoading} loadingText="Uploading..." > Yes, Update Details</Button>
                 </form>
             </Flex>
         </section>

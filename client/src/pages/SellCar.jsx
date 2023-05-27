@@ -48,7 +48,7 @@ const SellCar = () => {
     }, [])
 
     const { getRootProps, getInputProps, open, isDragActive, acceptedFiles } = useDropzone({ onDrop, noClick: true })
-    const files = acceptedFiles.map(file => <div className='selected__file' key={file.path}>{file.path}</div>);
+    const files = acceptedFiles.map(file => <div className='selected__file' key={file.path}>Image Select Path - <span>{file.path}</span></div>);
     const handleChange = (e) => {
         setFormData((prevFormData) => ({
             ...prevFormData,
@@ -93,6 +93,7 @@ const SellCar = () => {
                     <label>Title</label>
                     <input name='title' onChange={handleChange} value={FormData.title} placeholder='Enter Title' type='text' />
                     <label>Upload Image Here </label>
+                    {files}
                     <div {...getRootProps()} className='drag-image' onClick={open} >
                         <input {...getInputProps()} />
                         {isDragActive ? (
@@ -105,33 +106,33 @@ const SellCar = () => {
                             Browse Image
                         </button>
                     </div>
-                    {files}
-                    <Flex flexDir="row" >
-                        <Box w="50%" >
+                   
+                    <Flex flexDir={["column", "column", "column", "row", "row"]} >
+                        <Box w={["100%", "100%", "100%", "50%", "50%"]}>
                             <label>Kms on Odometer</label>
                             <input name='odometerDistance' min='0' onChange={handleChange} value={FormData.odometerDistance} placeholder='Enter kms on Odometer' type='number' />
                         </Box>
-                        <Box w="50%" pl="10px" >
+                        <Box w={["100%", "100%", "100%", "50%", "50%"]} pl={["0", "0", "0", "10px", "10px"]}>
                             <label>Number of Accidents</label>
                             <input name='totalAccident' min="0" max="100" onChange={handleChange} value={FormData.totalAccident} placeholder='Enter Number of Accidents' type='number' />
                         </Box>
                     </Flex>
-                    <Flex flexDir="row" >
-                        <Box w="50%" >
+                    <Flex flexDir={["column", "column", "column", "row", "row"]}  >
+                        <Box w={["100%", "100%", "100%", "50%", "50%"]} >
                             <label>Original Paint</label>
                             <input name='color' onChange={handleChange} value={FormData.color} placeholder='Enter Original Paint' type='text' />
                         </Box>
-                        <Box w="50%" pl="10px" >
+                        <Box w={["100%", "100%", "100%", "50%", "50%"]} pl={["0", "0", "0", "10px", "10px"]} >
                             <label>Number of previous buyers</label>
                             <input name='totalBuyers' min="0" max="100" onChange={handleChange} value={FormData.totalBuyers} placeholder='Enter Number of Previous Buyers' type='number' />
                         </Box>
                     </Flex>
-                    <Flex flexDir="row" >
-                        <Box w="50%" >
+                    <Flex flexDir={["column", "column", "column", "row", "row"]}  >
+                        <Box w={["100%", "100%", "100%", "50%", "50%"]} >
                             <label> Price (₹)</label>
                             <input name='price' onChange={handleChange} value={FormData.price} placeholder='Enter Price e.g: 5.3 lakhs*' type='text' />
                         </Box>
-                        <Box w="50%" pl="10px" >
+                        <Box w={["100%", "100%", "100%", "50%", "50%"]} pl={["0", "0", "0", "10px", "10px"]} >
                             <label>Mileage (in kilometers per litre)</label>
                             <input name='mileage' min="0" onChange={handleChange} value={FormData.mileage} placeholder='Enter Mileage e.g: 30' type='number' />
                         </Box>

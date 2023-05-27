@@ -55,9 +55,10 @@ const CarsSpec = () => {
   }
   return (
     <section >
-      <Heading textAlign="center" fontSize="25px" mt="40px">Explore a Wide Range of Cars and Discover Models from Leading Manufacturers</Heading>
+      <Heading textAlign="center" fontSize={["15px","15px","20px","25px","25px"]} m="auto" mt="40px" w="80%" >Explore a Wide Range of Cars and Discover Models from Leading Manufacturers</Heading>
       <Text textAlign="center" fontSize="15px" mb="20px" >Find Your Perfect Ride</Text>
-      <Flex w="20%" mt="20px" ml={"auto"} mr="5%">
+      <Flex   mt="30px" px="5%" justifyContent="space-between" alignItems={"center"}>
+      <Text  fontSize={["15px", "15px", "20px", "25px", "25px"]} color="#000" >Page {page} of {totalPages}</Text>
         <Input
           value={searchCar || ""}
           onChange={({ target: { value } }) => {
@@ -69,6 +70,7 @@ const CarsSpec = () => {
           pl="10px"
           borderBottom="1px solid var(--primary-color)"
           bg="var(--primary-light)"
+          w={["60%","60%","40%","30%","20%"]}
         />
       </Flex>
       <SimpleGrid columns={[1,1,2,2,3]} spacing={10} w="90%" m="auto" pt="60px" >
