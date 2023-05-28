@@ -68,7 +68,7 @@ const OldCars = () => {
         />
       </Flex>
       <SimpleGrid columns={[1, 1, 2, 2, 3]} spacing={10} w="90%" m="auto" pt="60px" >
-        {data && data.length > 0 && data.map((el) => <SingleOldCar data={el} key={el._id} />)}
+        {data && data.length > 0 && data.map((el) => <SingleOldCar page={page} data={el} key={el._id} />)}
       </SimpleGrid>
       {data && data.length > 0 && <Pagination page={page} totalPages={totalPages} handlePagination={handlePagination} />}
 

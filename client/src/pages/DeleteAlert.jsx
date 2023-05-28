@@ -14,7 +14,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAllOldCars } from '../redux/oldCars/oldCars.actions'
 
-const DeleteAlert = ({ onDeleteClose, isDelete, cancelRef, id }) => {
+const DeleteAlert = ({ onDeleteClose, isDelete, cancelRef, id ,page}) => {
     const [loading, setLoading] = useState(false)
     const toast = useToast()
     const dispatch = useDispatch()
@@ -32,7 +32,7 @@ const DeleteAlert = ({ onDeleteClose, isDelete, cancelRef, id }) => {
                 isClosable: true,
             })
             setLoading(false)
-            dispatch(getAllOldCars(`https://car-dealer-server-production.up.railway.app/oldCars`))
+            dispatch(getAllOldCars(`https://car-dealer-server-production.up.railway.app/oldCars?page=${page}`))
         }
         catch (err) {
             toast({

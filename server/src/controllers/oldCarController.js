@@ -83,19 +83,55 @@ const uploadCar = async (req, res) => {
   }
 };
 
+function convertPrice(priceStr) {
+  const conversionFactors = {
+    lakh: 100000,
+    lac: 100000,
+    lakhs: 100000,
+    lacs: 100000,
+    crore: 10000000,
+    crores: 10000000,
+    cr: 10000000,
+    crs: 10000000,
+  };
+
+  const [value, unit] = priceStr.split(" ");
+  const numericValue = parseInt(value);
+  const conversionFactor = conversionFactors[unit];
+  const price = numericValue * conversionFactor;
+
+  return price;
+}
+
 const getAlloldCars = async (req, res) => {
-  const { page = 1, limit = 9, color } = req.query;
-  console.log(page, limit, color);
+  const { page = 1, limit = 9, color, priceOrder } = req.query;
+  console.log(page, limit, color, priceOrder);
   let query = {};
   if (color) {
     query = { color: { $regex: color, $options: "i" } };
   }
   try {
     const x = await oldCarModel.find();
-    const allCars = await oldCarModel
+    let allCars = await oldCarModel
       .find(query)
       .skip((page - 1) * limit)
       .limit(limit);
+      // check If price has
+    if (priceOrder && priceOrder === "asc") {
+      allCars = allCars.sort((a, b) => {
+        return convertPrice(a.price) - convertPrice(b.price);
+      });
+      return res
+        .status(200)
+        .send({ cars: allCars, totalPages: Math.ceil(x.length / 9) });
+    } else if (priceOrder && priceOrder === "desc") {
+      allCars = allCars.sort((a, b) => {
+        return convertPrice(b.price) - convertPrice(a.price);
+      });
+      return res
+        .status(200)
+        .send({ cars: allCars, totalPages: Math.ceil(x.length / 9) });
+    }
     return res
       .status(200)
       .send({ cars: allCars, totalPages: Math.ceil(x.length / 9) });

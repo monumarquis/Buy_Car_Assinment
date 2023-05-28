@@ -58,6 +58,18 @@ const SellCar = () => {
     const handelForm = async (e) => {
         e.preventDefault();
         // console.log(formData);
+
+        let price = formData.price.trim().split(" ")
+        if (price.length <= 1) {
+            toast({
+                title: "Invalid Price",
+                description: "Please Enter valid price e.g 30 lacs OR 30 crore ",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+            return
+        }
         setLoading(true)
         try {
             let { message } = await axios.post("https://car-dealer-server-production.up.railway.app/oldCars", { ...formData, imageUrl: previewSource, userId })
@@ -106,7 +118,7 @@ const SellCar = () => {
                             Browse Image
                         </button>
                     </div>
-                   
+
                     <Flex flexDir={["column", "column", "column", "row", "row"]} >
                         <Box w={["100%", "100%", "100%", "50%", "50%"]}>
                             <label>Kms on Odometer</label>
