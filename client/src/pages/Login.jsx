@@ -60,12 +60,12 @@ const Login = () => {
     };
 
     return (
-        <Flex flexDir={"row"} h={"100vh"} >
+        <Flex flexDir={["column","column","column","row","row"]} h={"100vh"} >
             {/* form Section */}
-            <Flex className='Singup__Form' alignItems="center" w="50%">
+            <Flex className='Singup__Form' alignItems="center" w={["100%","100%","100%","50%","50%"]} >
                 <form onSubmit={handelForm} style={{ width: "100%" }}>
                     <Container
-                        maxW="70%"
+                       maxW={["90%","90%","80%","70%","70%"]}
                         mb="10"
                         paddingTop="20px"
                         boxShadow="rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
@@ -132,7 +132,7 @@ const Login = () => {
                 </form>
             </Flex>
             {/* left Image */}
-            <Flex className='Image' pos="relative" w="50%" >
+            <Flex className='Image' pos="relative" w={["100%","100%","100%","50%","50%"]} >
                 <Box bg="rgba(10, 10, 10,0.3)" position='absolute' h="100%" w="100%" top="0" left="0" ></Box>
                 <Image src={car} alt="car" objectFit={"cover"} w="100%" />
             </Flex>

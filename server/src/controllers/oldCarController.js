@@ -111,7 +111,7 @@ const getAlloldCars = async (req, res) => {
     query = { color: { $regex: color, $options: "i" } };
   }
   try {
-    const x = await oldCarModel.find();
+    const x = await oldCarModel.find(query);
     let allCars = await oldCarModel
       .find(query)
       .skip((page - 1) * limit)
